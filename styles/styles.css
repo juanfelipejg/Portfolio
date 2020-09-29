@@ -1,0 +1,609 @@
+/* reglas
+selectores
+declaraciones
+propiedades
+valores */
+
+/* Selectores : header-title-section (referencia a un tag html) */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tc7q2y');
+    src:  url('../fonts/icomoon.eot?tc7q2y#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tc7q2y') format('truetype'),
+      url('../fonts/icomoon.woff?tc7q2y') format('woff'),
+      url('../fonts/icomoon.svg?tc7q2y#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+
+  .burguer-button{
+      width: 40px;
+      height: 40px;
+      background:rgba(0, 0, 0, .8);
+      border-radius: 50%;
+      display: none; /* Display block permite asignar tamaño */
+      /* Forma para centrar un elemento */
+      line-height:40px;
+      text-align: center;
+      /* 2 Forma para centrar un elemento 
+      display: flex;
+      justify-content: center;
+      align-items: center;*/    
+      position: fixed;
+      left: 5px;
+      top: 5px;
+      z-index: 4;
+      color: white;
+  }
+
+ul{
+    margin:0px;
+    padding: 0px;
+    list-style: none;
+}
+
+body {
+font-family: 'Source Sans Pro', sans-serif;
+margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+}
+
+h1{
+    font-size: 35px;
+    line-height: 1.5em;
+    letter-spacing: -.2px;
+    color: white;
+    margin: 0px;
+    /*text-transform: uppercase; Buena practica mayusculas en CSS y no en HTML
+    text-decoration: underline;*/
+}
+
+h1 strong{
+    color: #026fff;    
+}
+
+h2{
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/*FlexBox
+ .flex{
+    display:flex; /* El modelo de caja puede tener cambios, elementos flexibles donde las dimensiones pueden afectarse 
+    flex-wrap: wrap /* propiedad que permite desborde de elementos 
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    flex-shrink: 0 /* Propiedad que impide afectar la dimension por el flex padre 
+} */
+.header{
+    background-color: #1b2127;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    flex-wrap: wrap;  
+}
+
+.container{
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    max-width: 1000px;
+    margin: 0px auto;
+    flex:1;
+}
+
+.logo{
+    margin: 0px;
+}
+
+.menu{
+    height: inherit;
+}
+
+.header ul{
+    display: flex;
+    height:inherit
+}
+
+.header ul li{
+    height: inherit;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding:0px 10px;
+}
+
+.hero{
+height: 250px;
+/* background-image: url('../images/asis.png'); */
+background-color: #1b2127;
+/* background-size: 400px 300px; */
+/* background-repeat: no-repeat; */
+/* background-position-x: right; */
+display: flex;
+align-items: center;
+justify-content:space-between;
+/* flex-wrap: wrap */
+}
+
+/* .hero h1{
+    width:60%
+} */
+
+.hero-image{
+    height: inherit;
+    object-fit: cover;
+/*     width:40% */
+}
+
+.portfolio{
+    background: #fff7f7;
+    padding: 20px;
+}
+
+.project{
+    border: 1px solid gray; /* admite 3 propiedades para ser visible */ 
+    border-radius: 10px;
+    background: white;
+    margin: 10px; /* Margen a los costados */
+    margin-bottom:15px; /* Margen de abajo */ 
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project strong{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title,
+.certification-title{
+    font-size: 30px;
+    margin:10px 0px;
+}
+
+.project-name,
+.project-date,
+.project-link{
+    margin: 10px 0px
+}
+
+.project-name{
+    font-size: 20px;
+}
+
+.project-link{
+  text-decoration: none;
+}
+
+.project-details{
+    width: 50%;
+    display: inline-block;    
+}
+
+.project-imageContainer{
+    width: 40%;  
+    display: inline-block;
+}
+
+.project-image{
+width: 100%;
+}
+
+/* Margin: Espacio entre un elemento y las margenes de la pagina 
+Padding: Espacio del contenido dentro de ese elemento */
+
+/* Display block : Ocupa todo el ancho disponible (ocupa todo el costado)
+Display inline: Admite contenido a su costado. No respeta anchos definidos por lo cual puede ocupar todo el ancho si su contenido lo requiere
+Ubicar elementos a un costado
+Display inline-block : es una combinacion que respeta anchos definidos. 
+Display: flex */
+.academy{  
+    display: block;  
+    background: #fff7f7;
+    padding:20px;
+}
+
+.academy h2{
+    margin: -1.3em 0 0.8em 0;
+}
+
+.academy-container{
+    display: flex;
+}
+
+
+.certification{
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+    background: white;
+    align-items: center;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+    width: 44%;
+}
+.certification-detail{    
+    margin: 10px;
+}
+
+.certification-image{
+width: 100%;
+object-fit: contain;
+}
+
+.contact{
+    background-color :#0063FF;
+    color: white;
+    display: flex;  
+    flex-wrap: wrap;
+    align-items: center;
+    height: 150px;
+    justify-content: space-between;
+    padding: 0px 25px;
+}
+
+.form-email{
+    padding-bottom: 10px;
+}
+
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+.form-email input{
+    border-style: solid;
+    border-radius: 5px;
+    border-color: gray;
+    background-image: url('../images/letra.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: center;
+    padding: 10px 20px 10px 30px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 13px;
+    background: transparent;
+    color: white;
+    padding: 7px 30px;
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    
+}
+
+.social-link{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-size: 50px 50px;
+    margin:0px 10px ;
+}
+
+.social-link.linkedin{
+    background-image: url('../images/linkedin.svg');    
+}
+
+.social-link.facebook{
+    background-image: url('../images/facebook.svg');    
+}
+
+.social-link.github{
+    background-image: url('../images/github.svg');    
+}
+
+.social-link.instagram{
+    background-image: url('../images/instagram.svg');    
+}
+
+.footer{
+    background-color: #1b2127 ;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90px;
+    margin-bottom: 1px;
+}
+
+.footer-image {
+    vertical-align: middle; 
+    height: inherit;
+    /* object-fit: cover;   */ 
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width:1024px){
+
+    .hero{
+        height: auto; 
+        position: relative;
+        overflow: hidden; /* Evitar desbordamiento */ 
+        padding: 3.2em;  
+    }
+    
+    h1{
+        font-size: 1.7em;
+        z-index: 2;
+        text-shadow: 1px 2px 2px #000;
+    }
+    
+    .hero-image{
+        position: absolute;
+        z-index: 1;
+/*         top: 0;
+        bottom: 0;*/        
+        right: 0;
+        left: 0; 
+        width: 100%;
+    }
+
+    .portfolio{
+        padding: 0;
+    }
+    
+    .project-imageContainer img{
+        width: 100%;
+    }
+
+    .flexible-video{
+        width: 100%;
+        height: 0%;
+        padding-top:56.25% ;/* Proporcion */
+        background: blue;
+        position: relative;
+    }
+
+    .youtube{
+        height: 100%;
+        width: 100%;
+        position: absolute; 
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .academy{
+        padding: 0;
+    }
+    
+    .academy h2{
+    margin: -.6em 0 .3em 0;
+    padding: 1em 0em .3em .3em;
+    }
+}
+
+@media screen and (max-width:767px){
+
+h2{
+    font-size: 1.2em;
+    margin: 0.9em;
+}
+
+.burguer-button{
+display: block;
+}
+
+.header{
+    display: block;
+    height: auto;
+    text-align: center;
+}
+
+.menu{
+    position: fixed;
+    background: rgba(5, 111, 255,.9);
+    z-index: 3;
+    top: 0;
+    left: -100vw;
+    bottom: 0;
+    width: 100vw;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s; 
+}
+
+.menu.is-active{
+    left:0; /* Mostrar menu */
+}
+
+.header ul{
+    display: block;
+}
+
+.header ul li{
+    height: 40px;
+}
+
+.header a{
+    justify-content: center;
+}
+
+.project{
+    display: block;
+}
+
+.project-details{
+    width: auto; 
+    font-size: 16px;   
+}
+
+.project-title{
+font-size: 1.5em;
+margin-bottom: .3em;
+}
+
+.project-name{
+    font-size: 1.2em;
+}
+
+.project-link{
+    font-size: 1em;
+}
+
+.project-description{
+    font-size: 1em;
+}
+
+.project-title, .project-name, .project-link{
+    margin: 1em 0;
+}
+.project-imageContainer{
+    width: auto;
+    text-align: center;
+}
+
+.project-imageContainer img{
+    width: 100%;
+}
+
+/* Certifications and skills */
+.academy{
+    display: block;
+}
+
+.certification{
+    width: auto;
+    padding: 1.2em;
+}
+
+.certification-title{
+font-size: 1.7em;
+}
+
+.certification-description{
+    font-size: 1.3em;
+}
+}
+
+@media screen and (max-width:480px){
+h1{
+    font-size: 1.3em;
+}
+    .project-details{
+        width: auto; 
+        font-size: 16px;   
+    }
+
+    .certification-detail{
+        width: auto;
+        font-size: 12px;
+    }
+
+    .contact{
+        height: auto;
+        padding: 1em;
+        display: block;
+        text-align: center;
+    }
+
+    .social{
+        display:flex;
+        justify-content: center;
+    }
+
+    .social-link{
+        background-size: 2em 2em;
+        background-repeat: no-repeat;
+    }
+
+    .form-email button{
+        margin: 1em auto;
+    }
+
+    .form-email h3{
+        margin: 10px;
+    }
+
+    .footer{
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+        height: auto;
+    }
+
+    .footer img{
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width:320px){
+h1{
+    font-size: 1.1em;
+}
+
+.hero{
+    padding: 2em 1em;
+}
+    .project-details{
+        width: auto; 
+        font-size: 10px;   
+    }
+
+    .certification-detail{
+        width: auto;
+        font-size: 10px;
+    }
+
+}
